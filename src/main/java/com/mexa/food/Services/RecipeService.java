@@ -3,6 +3,6 @@ package com.mexa.food.Services;
 import org.springframework.stereotype.Service;
 
 @Service()
-public class IngredientService {
+public class RecipeService {
     
 }
