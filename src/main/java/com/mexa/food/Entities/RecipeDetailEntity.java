@@ -8,6 +8,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "recipe_details")
 @Table(name = "recipe_details", schema = "main", catalog = "mexafood")
 public class RecipeDetailEntity {
@@ -24,29 +33,4 @@ public class RecipeDetailEntity {
     @JoinColumn(name = "fk_recipe")
     private RecipeEntity fkRecipe;
 
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public StepEntity getFkStep() {
-        return fkStep;
-    }
-
-    public void setFkStep(StepEntity fkStep) {
-        this.fkStep = fkStep;
-    }
-
-    public RecipeEntity getFkRecipe() {
-        return fkRecipe;
-    }
-
-    public void setFkRecipe(RecipeEntity fkRecipe) {
-        this.fkRecipe = fkRecipe;
-    }
-    
 }

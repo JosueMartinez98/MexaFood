@@ -11,6 +11,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "recipes")
 @Table(name = "recipes", schema = "main", catalog = "mexafood")
 public class RecipeEntity {
@@ -46,84 +55,4 @@ public class RecipeEntity {
     @OneToMany(mappedBy = "fkRecipe")
     private List<RecipeMaterialEntity> recipeMaterialsList;
 
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Date getRegisterDate() {
-        return registerDate;
-    }
-
-    public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
-    }
-
-    public String getState() {
-        return State;
-    }
-
-    public void setState(String state) {
-        State = state;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public List<RecipeDetailEntity> getRecipeDetailsList() {
-        return recipeDetailsList;
-    }
-
-    public void setRecipeDetailsList(List<RecipeDetailEntity> recipeDetailsList) {
-        this.recipeDetailsList = recipeDetailsList;
-    }
-
-    public List<StepEntity> getStepsList() {
-        return stepsList;
-    }
-
-    public void setStepsList(List<StepEntity> stepsList) {
-        this.stepsList = stepsList;
-    }
-
-    public List<RecipeMaterialEntity> getRecipeMaterialsList() {
-        return recipeMaterialsList;
-    }
-
-    public void setRecipeMaterialsList(List<RecipeMaterialEntity> recipeMaterialsList) {
-        this.recipeMaterialsList = recipeMaterialsList;
-    }
 }

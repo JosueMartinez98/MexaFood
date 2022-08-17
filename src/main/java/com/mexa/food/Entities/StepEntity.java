@@ -12,6 +12,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "steps")
 @Table(name = "steps", schema = "main", catalog = "mexafood")
 public class StepEntity {
@@ -35,55 +44,5 @@ public class StepEntity {
 
     @OneToMany(mappedBy = "fkStep")
     private List<RecipeDetailEntity> fkRecipeDetail;
-
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getStep() {
-        return step;
-    }
-
-    public void setStep(int step) {
-        this.step = step;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public RecipeEntity getFkRecipe() {
-        return fkRecipe;
-    }
-
-    public void setFkRecipe(RecipeEntity fkRecipe) {
-        this.fkRecipe = fkRecipe;
-    }
-
-    public List<RecipeDetailEntity> getFkRecipeDetail() {
-        return fkRecipeDetail;
-    }
-
-    public void setFkRecipeDetail(List<RecipeDetailEntity> fkRecipeDetail) {
-        this.fkRecipeDetail = fkRecipeDetail;
-    }
-
     
 }

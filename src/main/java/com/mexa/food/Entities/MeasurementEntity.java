@@ -10,6 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "measurement_units")
 @Table(name = "measurement_units", schema = "main", catalog = "mexafood")
 public class MeasurementEntity {
@@ -26,31 +35,5 @@ public class MeasurementEntity {
 
     @OneToMany(mappedBy = "fkMeasurement")
     private List<RecipeIngredientEntity> recipeIngredientsList;
-
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-
     
 }
