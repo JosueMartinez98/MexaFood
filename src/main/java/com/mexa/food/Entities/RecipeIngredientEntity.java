@@ -36,4 +36,8 @@ public class RecipeIngredientEntity {
     @ManyToOne()
     @JoinColumn(name = "fk_measurement")
     private MeasurementEntity fkMeasurement;
+
+    @ManyToOne()
+    @JoinColumn(name = "fk_recipe")
+    private RecipeEntity fkRecipe;
 }

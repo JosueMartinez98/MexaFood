@@ -55,4 +55,6 @@ public class RecipeEntity {
     @OneToMany(mappedBy = "fkRecipe")
     private List<RecipeMaterialEntity> recipeMaterialsList;
 
+    @OneToMany(mappedBy = "fkRecipe")
+    private List<RecipeIngredientEntity> recipeIngredientList;
 }
